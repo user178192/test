@@ -19,15 +19,19 @@ public:
         TreeNode* cur = nullptr;
         while (!helper_stack.empty()) {
             cur = helper_stack.top();
-            helper_stack.pop();
+ 			helper_stack.pop();
+						
             if (cur -> right != nullptr) {
                 helper_stack.push(cur -> right);
             }
             if (cur -> left != nullptr) {
                 helper_stack.push(cur -> left);
             }
+
+			
             cur -> left = nullptr;
-            cur -> right = !helper_stack.empty() ? nullptr : helper_stack.top();
+            cur -> right = helper_stack.empty() ? nullptr : helper_stack.top();
+
         }
     }
 private:
@@ -35,5 +39,8 @@ private:
 };
 
 int main(int argc, char *argv[]) {
-	
+	TreeNode a(0);
+	TreeNode* ptr = &a;
+	Solution test;
+	test.flatten(ptr);
 }
