@@ -37,8 +37,7 @@ public:
             return res;
         }
 
-        start = 0; end = n - 1;
-        cout << start << "|" << end << endl;		
+        start = 0; end = n - 1;	
         // find the upper bound
 		binSearch(A, target, 1);
 
@@ -60,5 +59,5 @@ int main(int argc, char *argv[]) {
 	Solution test;
 	int A[3] = {2, 2, 2};
 	auto res = test.searchRange(A, 3, 2); 
-	//cout << res[0]<< "|" << res[1] << endl; 
+	cout << res[0]<< "|" << res[1] << endl; 
 }
